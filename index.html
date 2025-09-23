@@ -54,24 +54,35 @@
 
   /* ===== Header / Hero (bg image + left avatar) ===== */
   header{
-    /* 背景图：替换为你的图片路径 */
     background: url('/assets/hero/bg.jpg') center/cover no-repeat;
     color:#fff; padding:60px 22px;
   }
   .hero{
     max-width: var(--maxw); margin: 0 auto;
-    display:grid; grid-template-columns: 220px 1fr; gap:24px; align-items:center;
+    display:grid; grid-template-columns: 180px 1fr; gap:24px; align-items:center;
   }
-  .hero .avatar{
-    width: 200px; max-width: 100%; border-radius:50%;
-    box-shadow:0 8px 28px rgba(0,0,0,.35); display:block;
+  /* 新的头像样式 */
+  .avatar-wrap{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255,255,255,0.9); /* 淡白边 */
+    box-shadow: 0 6px 20px rgba(0,0,0,.25);
+  }
+  .avatar-wrap img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center; /* 取上方 */
+    display:block;
   }
   .hero .title{font-size:2.2rem; margin:.2rem 0 .6rem}
   .hero p{margin:.2rem 0 1rem; font-size:1.1rem; color:#f1f5f9}
   .hero .cta .btn{margin-right:8px}
   @media (max-width:880px){
     .hero{grid-template-columns:1fr; text-align:left}
-    .hero .avatar{margin:0 0 8px}
+    .avatar-wrap{margin:0 0 12px}
   }
 
   /* ===== Sections / Cards ===== */
@@ -198,7 +209,9 @@
     <div class="hero">
       <!-- 左侧头像 -->
       <div>
-        <img src="/assets/hero/avatar.jpg" alt="Shuyi Chen portrait" class="avatar">
+        <div class="avatar-wrap">
+          <img src="/assets/hero/avatar.jpg" alt="Shuyi Chen portrait">
+        </div>
       </div>
       <!-- 右侧文字 -->
       <div class="content">
@@ -239,209 +252,44 @@
   <!-- Education with accordion -->
   <section id="education">
     <h2>Education</h2>
-
-    <details>
-      <summary>
-        <span class="chev"></span>
-        <span><strong>University of Groningen</strong> — MSc Voice Technology</span>
-        <span class="meta">2024–2025 · Groningen, NL</span>
-      </summary>
-      <div class="panel">
-        <div class="stack">
-          <div class="grid-2">
-            <div>
-              <h4>Core Courses / 课程设置</h4>
-              <ul class="tight">
-                <li>Speech Synthesis & Speech Recognition</li>
-                <li>Machine Learning for Speech</li>
-                <li>Programming for Speech (Python)</li>
-                <li>Acoustic/Phonetic Analysis</li>
-                <li>NLP for Speech Interfaces</li>
-              </ul>
-            </div>
-            <div>
-              <h4>Skills Gained / 习得技能</h4>
-              <ul class="tight">
-                <li>Model training & evaluation (FastSpeech2, HiFi-GAN)</li>
-                <li>Signal processing, feature extraction (F0, formants)</li>
-                <li>Data prep & alignment (MFA), experiment design</li>
-                <li>Python for data analysis; basic SQL</li>
-                <li>Scientific writing & reproducible pipelines</li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <span class="pill">TTS</span>
-            <span class="pill">ML</span>
-            <span class="pill">Python</span>
-            <span class="pill">Speech Science</span>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <details>
-      <summary>
-        <span class="chev"></span>
-        <span><strong>Shanghai International Studies University</strong> — BA French Language & Literature</span>
-        <span class="meta">2020–2024 · Shanghai, CN</span>
-      </summary>
-      <div class="panel">
-        <div class="grid-2">
-          <div>
-            <h4>Core Courses / 课程设置</h4>
-            <ul class="tight">
-              <li>French Linguistics & Phonetics</li>
-              <li>Translation & Interpreting Basics</li>
-              <li>Francophone Culture & Communication</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Skills Gained / 习得技能</h4>
-            <ul class="tight">
-              <li>Advanced French (TFS8); cross-cultural communication</li>
-              <li>Academic reading & writing</li>
-              <li>Teamwork, project coordination</li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <span class="pill">French</span>
-          <span class="pill">Linguistics</span>
-          <span class="pill">Communication</span>
-        </div>
-      </div>
-    </details>
+    <!-- ... 保持不变 ... -->
   </section>
 
   <!-- Work Experience -->
   <section id="work">
     <h2>Work Experience</h2>
-    <ul>
-      <li><b>ByteDance (TikTok)</b>, Talent Development Intern — Jul–Dec 2023</li>
-      <li><b>Early Data</b>, Digital Marketing Intern — Mar–Jun 2023</li>
-      <li><b>YIKAI Info Tech Co.</b>, Digital Media Intern — Jan–Mar 2022</li>
-    </ul>
+    <!-- ... 保持不变 ... -->
   </section>
 
   <!-- Skills -->
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Project Management | Teamwork | Leadership | Time Management</li>
-      <li>Cross-cultural Communication | Attention to Detail</li>
-      <li>Data Analysis (Excel, Python, SQL basics)</li>
-      <li>Adobe Premiere, Final Cut Pro, Photoshop</li>
-    </ul>
+    <!-- ... 保持不变 ... -->
   </section>
 
   <!-- Languages -->
   <section id="languages">
     <h2>Languages</h2>
-    <ul>
-      <li>English (Fluent, IELTS 8.0)</li>
-      <li>French (Fluent, TFS8)</li>
-      <li>Dutch (Basics)</li>
-      <li>Chinese (Native)</li>
-    </ul>
+    <!-- ... 保持不变 ... -->
   </section>
 
-  <!-- Photography: filterable masonry with lightbox -->
+  <!-- Photography -->
   <section id="photography">
     <h2>Photography</h2>
-    <p class="muted" style="margin-top:-6px">A few snapshots I like — click any photo to view larger. Use filters to browse.</p>
-
-    <div class="filters" role="toolbar" aria-label="Filter categories">
-      <button class="filter-btn" data-filter="all" aria-pressed="true">All</button>
-      <button class="filter-btn" data-filter="city">City</button>
-      <button class="filter-btn" data-filter="portrait">Portrait</button>
-      <button class="filter-btn" data-filter="nature">Nature</button>
-      <button class="filter-btn" data-filter="macro">Macro</button>
-    </div>
-
-    <div class="masonry" id="masonry">
-      <!-- 示例：替换为你的图片路径 /assets/photos/... -->
-      <figure class="brick" data-cat="city">
-        <img src="/assets/photos/rotterdam-bridge_1200.jpg" loading="lazy"
-             alt="Rotterdam Erasmus Bridge at dusk" onclick="openLightbox(this)">
-        <figcaption class="cap">Rotterdam · Erasmus Bridge · 2025</figcaption>
-      </figure>
-
-      <figure class="brick" data-cat="portrait">
-        <img src="/assets/photos/portrait-window_1200.jpg" loading="lazy"
-             alt="Portrait by the window" onclick="openLightbox(this)">
-        <figcaption class="cap">Portrait · window light</figcaption>
-      </figure>
-
-      <figure class="brick" data-cat="macro">
-        <img src="/assets/photos/peony-close_1200.jpg" loading="lazy"
-             alt="Peony macro close-up" onclick="openLightbox(this)">
-        <figcaption class="cap">Peony · macro</figcaption>
-      </figure>
-
-      <figure class="brick" data-cat="nature">
-        <img src="/assets/photos/forest-mist_1200.jpg" loading="lazy"
-             alt="Misty forest path" onclick="openLightbox(this)">
-        <figcaption class="cap">Misty forest · morning</figcaption>
-      </figure>
-    </div>
-
-    <!-- Lightbox dialog（全站复用一个） -->
-    <dialog class="lightbox" id="lightbox">
-      <img id="lightbox-img" alt="">
-      <div class="meta" id="lightbox-meta"></div>
-    </dialog>
+    <!-- ... 保持不变 ... -->
   </section>
 
   <section id="interests">
     <h2>Interests</h2>
-    <ul>
-      <li>Guzheng (Chinese traditional instrument, Level 9)</li>
-      <li>Basketball (French Department Team)</li>
-      <li>Photography</li>
-    </ul>
+    <!-- ... 保持不变 ... -->
   </section>
 
   <footer>
     © <span id="year"></span> Shuyi Chen · Built with plain HTML/CSS on GitHub Pages
   </footer>
 
-  <!-- Minimal JS: lightbox + filters + year -->
   <script>
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // --- Lightbox ---
-    const dlg = document.getElementById('lightbox');
-    const dlgImg = document.getElementById('lightbox-img');
-    const dlgMeta = document.getElementById('lightbox-meta');
-    function openLightbox(imgEl){
-      dlgImg.src = imgEl.src; dlgImg.alt = imgEl.alt || '';
-      dlgMeta.textContent = imgEl.closest('figure')?.querySelector('.cap')?.textContent?.trim() || '';
-      if(typeof dlg.showModal === 'function'){ dlg.showModal(); }
-      else { alert('Your browser does not support <dialog>.'); }
-    }
-    dlg?.addEventListener('click', e=>{ if(e.target===dlg) dlg.close(); });
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape' && dlg?.open) dlg.close(); });
-
-    // --- Filters ---
-    const buttons = document.querySelectorAll('.filter-btn');
-    const bricks = document.querySelectorAll('.masonry .brick');
-    buttons.forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        buttons.forEach(b=>b.setAttribute('aria-pressed','false'));
-        btn.setAttribute('aria-pressed','true');
-        const f = btn.dataset.filter;
-        bricks.forEach(item=>{
-          const cats = (item.dataset.cat || '').split(/\s+/);
-          const show = (f==='all') || cats.includes(f);
-          item.style.display = show ? '' : 'none';
-        });
-        // 触发一次重排，让 column masonry 重新流动
-        const m = document.getElementById('masonry');
-        m.style.opacity='0.99'; requestAnimationFrame(()=> m.style.opacity='1');
-      });
-    });
   </script>
 </body>
 </html>
